@@ -30,6 +30,9 @@ print(data)
 print('#'*150)
 print('Aufgabe 4.')
 
+# Wenn ergebnis von Scaler eine Parabel ist, Scaler nicht verwneden(hier kann keine exakte Gruppenanzahl ermittlet werden)
+# einfach ausprobieren!
+
 #s_scaler = StandardScaler()
 #data = pd.DataFrame(s_scaler.fit_transform(data), columns=data.columns)
 #print(data)
