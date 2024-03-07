@@ -6,9 +6,11 @@ from sklearn.preprocessing import StandardScaler
 path = "/Users/student/PycharmProjects/Clustering_PG2/diamonds.csv"
 data = pd.read_csv(path, delimiter=",")
 data_unknown = data.drop(['cut', 'Unnamed: 0'], axis=1)
+# transformieren
 conv_num = ['clarity', 'color']
 data_unknown[conv_num] = data_unknown[conv_num].astype('category')
 data_unknown[conv_num] = data_unknown[conv_num].apply(lambda x: x.cat.codes)
+
 s_scaler = StandardScaler()
 data_unknown = pd.DataFrame(s_scaler.fit_transform(data_unknown), columns=data_unknown.columns)
 print(data_unknown)
