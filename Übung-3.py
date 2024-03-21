@@ -84,6 +84,8 @@ print(einzigartig)
 # Übung 5.1 (Boxplot für 'age', gruppiert nach 'income')
 print('#'*150)
 print('Aufgabe 5.1')
+print('Box-Plot')
+
 fig, ax = plt.subplots(figsize=(10,8))
 plt.suptitle('')
 data.boxplot(column=['age'], by='income', ax=ax)
@@ -92,8 +94,16 @@ plt.show()
 # Übung 5.2 (erstelle einen Scatter Plot von 'age' gegen 'hours-per-week', farbkodiert nach 'income')
 print('#'*150)
 print('Aufgabe 5.2')
+print('Scatter-Plot')
+
 plt.figure(figsize = (10, 6))
 sns.scatterplot(x='age', y='hours-per-week', hue='income', data=data, palette='coolwarm')
 plt.title('Scatter Plot von age gegen hours-per-week')
 plt.xlabel('Alter')
 plt.ylabel('Stunden pro Woche')
+
+plt.xlim(data['age'].min(), data['age'].max())
+plt.ylim(data['hours-per-week'].min(), None) # anstatt None kann auch eine Zahl eingegeben werden
+
+plt.legend(title='Einkommen')
+plt.show()
