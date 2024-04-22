@@ -86,7 +86,7 @@ print('#'*150)
 print('Aufgabe 5.1')
 print('Box-Plot')
 
-fig, ax = plt.subplots(figsize=(10,8))
+fig, ax = plt.subplots(figsize=(10, 8))
 plt.suptitle('')
 data.boxplot(column=['age'], by='income', ax=ax)
 plt.show()
