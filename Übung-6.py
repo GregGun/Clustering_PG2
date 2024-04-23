@@ -76,3 +76,36 @@ print('BoxPlot')
 data.boxplot(column='alcohol', by='quality')
 plt.title('Alkoholgehalt nach Weinqualität')
 plt.show()
+
+1. Datensatz laden und erkunden
+• Laden Sie den 'Wine Quality'-Datensatz in einen DataFrame.
+• Geben Sie die ersten und letzten 5 Zeilen des DataFrames aus.
+• Überprüfen Sie die Anzahl der Zeilen und Spalten sowie die Datentypen der Spalten.
+
+2. Datenbereinigung
+• Überprüfen Sie den Datensatz auf fehlende Werte und behandeln Sie diese entsprechend (z.B. durch Entfernen oder Ersetzen).
+• Entfernen Sie Duplikate, falls vorhanden.
+• Konvertieren Sie Datentypen, falls notwendig (z.B. wenn numerische Werte fälschlicherweise als Zeichenketten codiert sind).
+
+3. Datenanalyse
+• Berechnen Sie statistische Kennzahlen (Mittelwert, Median, Standardabweichung etc.) für jede numerische Spalte.
+• Ermitteln Sie die Korrelation zwischen der Qualität des Weins und anderen chemischen Eigenschaften.
+
+correlation = df.corr()
+print(correlation['quality'].sort_values())
+
+
+4. Datenvisualisierung ( erfordert matplotlib)
+• Erstellen Sie Histogramme für einige chemische Eigenschaften, um ihre Verteilungen zu verstehen.
+df['alcohol'].hist()
+plt.title('Verteilung des Alkoholgehalts')
+
+• Erstellen Sie ein Streudiagramm (Scatter Plot), um die Beziehung zwischen Alkoholgehalt und Qualität darzustellen.
+
+plt.scatter(df['alcohol'], df['quality'])
+plt.title('Alkoholgehalt vs. Qualität des Weins')
+
+• Erstellen Sie Boxplots für die Qualität in Bezug auf verschiedene chemische Eigenschaften, um Unterschiede in den Qualitätsstufen zu erkennen.
+
+df.boxplot(column='alcohol', by='quality')
+plt.title('Alkoholgehalt nach Weinqualität')

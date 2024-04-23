@@ -15,6 +15,7 @@ print(data)
 data_unknown = data
 data_unknown = data_unknown.astype("category")
 data_unknown = data_unknown.apply(lambda x: x.cat.codes)
+print(data)
 
 # KElbow verwenden, um Anzahl der Gruppen zu erhalten
 model = KMeans()
